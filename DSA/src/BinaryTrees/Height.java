@@ -1,10 +1,10 @@
 package BinaryTrees;
 
-class Node{
+class Node1{
 	int data;
-	Node left;
-	Node right;
-	Node(int data){
+	Node1 left;
+	Node1 right;
+	Node1(int data){
 		this.data=data;
 		left=null;
 		right=null;
@@ -14,7 +14,7 @@ class Node{
 
 public class Height {
 	
-	static int heightOfBinaryTree(Node root) {
+	static int heightOfBinaryTree(Node1 root) {
 		if(root==null)
 			return 0;
 		else {
@@ -25,11 +25,11 @@ public class Height {
 	}
 
 	public static void main(String[] args) {
-		 Node root=new Node(4);
-		 root.left=new Node(5);
-		 root.right=new Node(6);
-		 root.left.left=new Node(7);
-		 root.left.right=new Node(8);
+		 Node1 root=new Node1(4);
+		 root.left=new Node1(5);
+		 root.right=new Node1(6);
+		 root.left.left=new Node1(7);
+		 root.left.right=new Node1(8);
 		 System.out.println(heightOfBinaryTree(root));
 		 
 

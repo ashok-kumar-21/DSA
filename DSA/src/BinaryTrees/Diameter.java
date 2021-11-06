@@ -1,6 +1,16 @@
 package BinaryTrees;
 import BinaryTrees.Height;
 
+class Pair{
+	int height=0;
+	int diameter=0;
+	Pair(){}
+	Pair(int height,int diameter){
+		this.height=height;
+		this.diameter=diameter;
+	}
+}
+
 public class Diameter {
 	
 	static int heightOfBinaryTree(Node1 root) {
@@ -26,6 +36,23 @@ public class Diameter {
 		}
 		
 	}
+	
+	static Pair optimizedBinaryTree(Node1 root) {
+		Pair p=new Pair();
+		if(root==null) {
+			return new Pair(0,0);
+		}
+		else {
+			 Pair d1=optimizedBinaryTree(root.left);
+			 Pair d2=optimizedBinaryTree(root.right);
+			 p.height=Math.max(d1.height,d2.height)+1;
+			 p.diameter=Math.max((d1.height+d2.height),Math.max(d1.diameter, d2.diameter));
+			 return p;
+			 
+		}
+		
+		
+	}
 
 	public static void main(String[] args) {
 		 Node1 root=new Node1(4);
@@ -38,6 +65,9 @@ public class Diameter {
 		 root.left.left.left.left=new Node1(11);
 		 root.left.right.right.right=new Node1(12);
 		 
+		 Pair p=new Pair();
+		 
+		 System.out.println(optimizedBinaryTree(root).diameter);
 		 
 		 System.out.println(diameterOfBinaryTree(root));
 

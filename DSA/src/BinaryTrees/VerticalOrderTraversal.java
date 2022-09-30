@@ -55,7 +55,6 @@ public class VerticalOrderTraversal {
         root.left.right = new Node(5);
         root.left.left.right = new Node(6);
         root.left.left.right.right = new Node(7);
-        root.right.left = new Node(9);
         verticalOrderTraversal(root);
 
 	}

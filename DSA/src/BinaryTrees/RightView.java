@@ -31,7 +31,7 @@ public class RightView {
     }
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		// TODO commit
 		Node root = new Node(1);
         root.left = new Node(2);
         root.right = new Node(3);
